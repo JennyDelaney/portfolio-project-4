@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import datetime
 
 
 STATUS = ((0, "Pending"), (1, "Confirmed"))
@@ -8,6 +9,18 @@ TIME_CHOICE = (
     ('AM', 'AM'),
     ('PM', 'PM'),
 )
+
+# TIME_CONFIRMED = (
+#     ('09:00', '09:00'),
+#     ('10:00', '10:00'),
+#     ('11:00', '11:00'),
+#     ('12:00', '12:00'),
+#     ('14:00', '14:00'),
+#     ('15:00', '15:00'),
+#     ('16:00', '16:00'),
+#     ('17:00', '17:00'),
+# # )
+
 
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_appointments")

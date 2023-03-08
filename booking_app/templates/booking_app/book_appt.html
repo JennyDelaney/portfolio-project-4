@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix It Physio</title>
+</head>
+<body>
+    <h1>Booking an appointment with the Physio</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+
+            <button id="submit-button" class="btn btn success">Book Now</button>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

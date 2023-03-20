@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from datetime import datetime
 
 
-STATUS = ((0, "Pending"), (1, "Confirmed"))
+STATUS = ((0, "Pending"), (1, "Confirmed by Phone"))
 
 TIME_CHOICE = (
     ('AM', 'AM'),
@@ -23,7 +23,7 @@ TIME_CHOICE = (
 
 
 class Booking(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_appointments")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="appt_list")
     name = models.CharField(max_length=60, null=True, blank=True)
     email_address = models.EmailField(null=True, blank=True)
     phone = models.CharField(max_length=20, null=False, blank=False, default='')

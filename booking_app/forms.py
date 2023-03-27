@@ -1,10 +1,8 @@
-from django.forms import ModelForm
-from django.core import validators
 from django import forms
 from .models import Booking
 
 
-class OnlineForm(ModelForm):
+class BookingForm(forms.ModelForm):
     """
     This form is connected to the view
     in order to provide users with the necessary
@@ -13,30 +11,6 @@ class OnlineForm(ModelForm):
     text for each field, as well as the widgets and
     handles validation where required.
     """
-    name = forms.CharField(
-        label='Patients Name',
-        required=True,
-        widget=forms.TextInput(attrs={'placeholder': 'Patients Name'}),
-    )
-
-    email_address = forms.EmailField(
-        label='Email Address of Patient',
-        required=True,
-        validators=[validators.EmailValidator(message="Invalid Email")],
-        widget=forms.TextInput(attrs={'placeholder': 'Email Address'}),
-    )
-
-    phone = forms.IntegerField(
-        label='Contact Number of Patient',
-        required=True,
-        widget=forms.TextInput(attrs={'placeholder': 'Contact Number'}),
-    )
-
-
-class Meta:
-    """
-    Defines which model to pull the fields from
-    """
-    model = Booking
-    fields = '__all__'
-    exclude = ('user', )
+    class Meta:
+        model = Booking
+        fields = ['name', 'email_address', 'phone', 'date_requested', 'time_requested',]

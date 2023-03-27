@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <h1 class="text-white text-center">Book an appointment with the Physio:</h1>
+        <!-- Booking an Appointment -->
+        <form method="POST" action="add_appt">
+            {% csrf_token %}
+            {{ form }}
+            <button id="submit-button" class="btn btn-success">Submit Appointment</button>
+        </form>
+    </div>
+</div>
+{%endblock%}

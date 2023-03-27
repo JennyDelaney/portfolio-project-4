@@ -37,14 +37,24 @@ class AddAppt(FormView):
     """
     form_class = BookingForm
     template_name = 'booking_app/add_appt.html'
-    
+    success_url = '/thank_you/'
+
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
             form.save()
-            return render(request, 'ApptList')
+            return render(request, 'thank_you.html')
         else:
-            message.error(request, 'Appointment not completed, please check your appointment information')
+            message.error(request, 'Appointment is not completed, please check the appointment information')
 
-        return render(request, self.template_name, {'form': form})
+        return render(request, template_name, {'form': form})
+
+class ThankYou(generic.DetailView):
+    """
+    Renders the Thank You page in the browser
+    """
+    template_name = 'thank_you.html'
+
+    def get(self, request):
+        return render(request, 'thank_you.html')

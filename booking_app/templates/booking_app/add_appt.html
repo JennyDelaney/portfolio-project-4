@@ -2,15 +2,22 @@
 
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row">
-        <h1 class="text-white text-center">Book an appointment with the Physio:</h1>
-        <!-- Booking an Appointment -->
-        <form method="POST" action="add_appt">
-            {% csrf_token %}
-            {{ form }}
-            <button id="submit-button" class="btn btn-success">Submit Appointment</button>
-        </form>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2"></div>
+        <h3 class="text-white text-center">Make an appointment with the Physio:</h3>
     </div>
+        <!-- Making an Appointment -->
+  <div class="row">
+      <div class="col-md-8 mt-3 offset-md-2">
+          <form class="login" method="POST" action="{% url 'add_appt' %}">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button id="submit-button" class="btn btn-success">Submit Appointment</button>
+          </form>
+      </div>
+  </div>
 </div>
 {%endblock%}

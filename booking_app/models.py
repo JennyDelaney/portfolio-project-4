@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from datetime import datetime
 
 
-STATUS = ((0, "Pending"), (1, "Confirmed by Phone"))
+STATUS = ((0, "Awaiting confirmation phone call"), (1, "Confirmed by Phone"))
 
 TIME_CHOICE = (
     ('AM', 'AM'),

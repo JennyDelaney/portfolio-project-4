@@ -6,7 +6,7 @@ from .models import Booking
 class BookingAdmin(admin.ModelAdmin):
     model = Booking
     list_filter = ('status', 'time_requested')
-    list_display = ('name', 'status', 'date_requested', 'time_requested')
+    list_display = ('user', 'name', 'status', 'date_requested', 'time_requested', 'email_address', 'phone',)
     search_fields = ['email_address', 'name']
     actions = ['confirm_appointment']
 

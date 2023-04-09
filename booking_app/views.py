@@ -22,8 +22,8 @@ class ApptList(generic.ListView):
     so that they can be edited or deleted
     """
     model = Booking
-    queryset = Booking.objects.filter(status=1).order_by('-date_requested')
     template_name = 'booking_app/appt_list.html'
+    queryset = Booking.objects.filter(status=0).order_by('-date_requested')
     paginate_by = 9
 
 
@@ -43,8 +43,9 @@ class AddAppt(FormView):
         form = self.form_class(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
+            booking.user = request.user
             form.save()
-            return render(request, 'thank_you.html')
+            return render(request, 'booking_app/thank_you.html')
         else:
             message.error(request, 'Appointment is not completed, please check the appointment information')
 
@@ -55,7 +56,7 @@ class ThankYou(generic.DetailView):
     """
     Renders the Thank You page in the browser
     """
-    template_name = 'thank_you.html'
+    template_name = 'booking_app/thank_you.html'
 
     def get(self, request):
-        return render(request, 'thank_you.html')
+        return render(request, 'booking_app/thank_you.html')

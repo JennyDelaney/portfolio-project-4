@@ -2,6 +2,15 @@ from django import forms
 from .models import Booking
 
 
+class DateInput(forms.DateInput):
+    """
+    This class provides a widget for use in the
+    booking form. It provides a calendar for users
+    to pick the booking date from
+    """
+    input_type = 'date'
+
+
 class BookingForm(forms.ModelForm):
     """
     This form is connected to the view
@@ -14,3 +23,4 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         fields = ['name', 'email_address', 'phone', 'date_requested', 'time_requested',]
+        widgets = {'date_requested': DateInput()}

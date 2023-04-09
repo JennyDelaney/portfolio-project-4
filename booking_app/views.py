@@ -50,6 +50,7 @@ class AddAppt(FormView):
 
         return render(request, template_name, {'form': form})
 
+
 class ThankYou(generic.DetailView):
     """
     Renders the Thank You page in the browser

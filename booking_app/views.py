@@ -17,7 +17,7 @@ class Home(generic.DetailView):
         return render(request, 'index.html')
 
 
-class ApptList(generic.ListView):
+class ApptList(generic.DetailView):
     """
     This is the view that will bring up the
     list of appoinments for a particular user
@@ -25,8 +25,18 @@ class ApptList(generic.ListView):
     """
     model = Booking
     template_name = 'booking_app/appt_list.html'
-    queryset = Booking.objects.filter(status=0).order_by('-date_requested')
-    paginate_by = 9
+    paginate_by = 6
+
+    def get(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            bookings = Booking.objects.filter(user=request.user).order_by('status')
+
+            return render(request, 'booking_app/appt_list.html', {
+                'bookings': bookings
+            })
+        else:
+            return redirect('account_login')
+
 
 
 class AddAppt(FormView):
@@ -86,7 +96,7 @@ def edit_appt(request, booking_id):
                     booking = form.save(commit=False)
                     booking.user = request.user
                     form.save()
-                    messages.success(request, 'Your booking has been updated')
+                    messages.success(request, 'Your appointment has been updated')
                     return redirect('/appt_list')
         else:
             messages.error(request, 'You do not have the authority to access this page!')
@@ -117,7 +127,7 @@ def delete_appt(request, booking_id):
         if booking.user == request.user:
             booking.delete()
             # Pops up a message to the user when a bookings is cancelled
-            messages.success(request, 'Your booking has been cancelled')
+            messages.success(request, 'Your appointment has been cancelled')
             return redirect('/appt_list')
         else:
             messages.error(request, 'You do not have the authority to access this page!')

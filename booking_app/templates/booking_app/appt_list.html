@@ -19,11 +19,16 @@
                                 <p>Contact Phone Number: {{ booking.phone }}</p>
                                 <p>Status of Booking: {{ booking.get_status_display }}</p>
                             </div>
-                            <div>
+                            <td>
                                 <a href="/edit_appt/{{ booking.id }}">
                                     <button>Edit</button>
                                 </a>
-                            </div>
+                            </td>
+                            <td>
+                                <a href="/delete_appt/{{ booking.id }}">
+                                    <button>Delete</button>
+                                </a>
+                            </td>
                         </div>
                     </div>
                 </div>

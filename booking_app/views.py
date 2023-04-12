@@ -77,7 +77,6 @@ def edit_appt(request, booking_id):
     they will be redirected to the home page and a
     confimation message will appear.
     """
-
     if request.user.is_authenticated:
         booking = get_object_or_404(Booking, id=booking_id)
         if booking.user == request.user:
@@ -88,7 +87,7 @@ def edit_appt(request, booking_id):
                     booking.user = request.user
                     form.save()
                     messages.success(request, 'Your booking has been updated')
-                    return redirect('/')
+                    return redirect('/appt_list')
         else:
             messages.error(request, 'You do not have the authority to access this page!')
             return redirect('/')
@@ -98,3 +97,28 @@ def edit_appt(request, booking_id):
     return render(request, 'booking_app/edit_appt.html', {
         'form': form
         })
+
+
+@login_required
+def delete_appt(request, booking_id):
+    """
+    When a user is on the My Appointments page
+    which can only be accessed if you are
+    logged in, they can click on the edit button.
+    This will bring them to a new page, where the booking
+    they wish to edit, located using the appointment id,
+    appears, prepopulated with the current information.
+    Once the user clicks on the submit changes button
+    they will be redirected to the home page and a
+    confimation message will appear.
+    """
+    if request.user.is_authenticated:
+        booking = get_object_or_404(Booking, id=booking_id)
+        if booking.user == request.user:
+            booking.delete()
+            # Pops up a message to the user when a bookings is cancelled
+            messages.success(request, 'Your booking has been cancelled')
+            return redirect('/appt_list')
+        else:
+            messages.error(request, 'You do not have the authority to access this page!')
+            return redirect('/')

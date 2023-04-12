@@ -16,7 +16,13 @@
                             <div class="card-text">
                                 <p>Date booking requested: {{ booking.date_requested }}</p>
                                 <p>Time of day requested: {{ booking.time_requested }}</p>
+                                <p>Contact Phone Number: {{ booking.phone }}</p>
                                 <p>Status of Booking: {{ booking.get_status_display }}</p>
+                            </div>
+                            <div>
+                                <a href="/edit_appt/{{ booking.id }}">
+                                    <button>Edit</button>
+                                </a>
                             </div>
                         </div>
                     </div>

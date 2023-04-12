@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+        <h3 class="text-white text-center">Edit an appointment with the Physio:</h3>
+    </div>
+        <!-- Edit an Appointment -->
+  <div class="row">
+      <div class="col-md-8 mt-3 offset-md-2">
+          <form method="POST">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button id="submit-button" class="btn btn-success">Update Appointment</button>
+          </form>
+      </div>
+  </div>
+</div>
+
+{%endblock%}

@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from django.views.generic.edit import FormView
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import Booking
 from .forms import BookingForm
 
@@ -60,3 +62,39 @@ class ThankYou(generic.DetailView):
 
     def get(self, request):
         return render(request, 'booking_app/thank_you.html')
+
+
+@login_required
+def edit_appt(request, booking_id):
+    """
+    When a user is on the My Appointments page
+    which can only be accessed if you are
+    logged in, they can click on the edit button.
+    This will bring them to a new page, where the booking
+    they wish to edit, located using the appointment id,
+    appears, prepopulated with the current information.
+    Once the user clicks on the submit changes button
+    they will be redirected to the home page and a
+    confimation message will appear.
+    """
+
+    if request.user.is_authenticated:
+        booking = get_object_or_404(Booking, id=booking_id)
+        if booking.user == request.user:
+            if request.method == 'POST':
+                form = BookingForm(data=request.POST, instance=booking)
+                if form.is_valid():
+                    booking = form.save(commit=False)
+                    booking.user = request.user
+                    form.save()
+                    messages.success(request, 'Your booking has been updated')
+                    return redirect('/')
+        else:
+            messages.error(request, 'You do not have the authority to access this page!')
+            return redirect('/')
+
+    form = BookingForm(instance=booking)
+
+    return render(request, 'booking_app/edit_appt.html', {
+        'form': form
+        })

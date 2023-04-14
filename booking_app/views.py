@@ -29,7 +29,7 @@ class ApptList(generic.DetailView):
 
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            bookings = Booking.objects.filter(user=request.user).order_by('status')
+            bookings = Booking.objects.filter(user=request.user).order_by('-date_requested')
 
             return render(request, 'booking_app/appt_list.html', {
                 'bookings': bookings

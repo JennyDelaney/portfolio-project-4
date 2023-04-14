@@ -2,14 +2,23 @@
 
 {% block content %}
 
-<section id="hero-outer">
-    <div id="hero-image"></div>
-    <div id="cover-text">
-        <h2>Welcome to Fix It Physio</h2>
-        <h3>I am a physio based in the Limerick Area.</h3>
-        <p><i class="fa fa-duotone fa-seedling"></i></p>
+<div class="container">
+    <div class="row h-100">
+        <div class="col col-lg-6 col-md-8 col-sm-12 m-auto text-center p-3">
+            <div class="card border-0">
+                <img src="https://res.cloudinary.com/dtek8odwb/image/upload/v1681472936/physio-therapy_mjwmym.jpg" class="card-img-top" alt="physio image">
+                <div class="card-body">
+                    <h1 class="card-title logo-text">Welcome to FIX-It Physio</h1>
+                    <h5 class="card-text">If you would like to make an appointment please register or log in to book.</h5>
+                    <h4>
+                        <a href="{% url 'account_signup' %}" class="sign-up-button btn btn-lg text-uppercase py-2">Sign In</a>
+                        <a href="{% url 'account_login' %}" class="log-in-button btn btn-lg text-uppercase py-2">Log In</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
+</div>
 
 
 {%endblock%}

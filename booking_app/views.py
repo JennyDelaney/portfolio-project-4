@@ -38,7 +38,6 @@ class ApptList(generic.DetailView):
             return redirect('account_login')
 
 
-
 class AddAppt(FormView):
     """
     Renders the Appt Booking form page in the browser
@@ -59,7 +58,7 @@ class AddAppt(FormView):
             form.save()
             return render(request, 'booking_app/thank_you.html')
         else:
-            message.error(request, 'Appointment is not completed, please check the appointment information')
+            message.error(request, 'You appointment is not completed, please check the appointment information')
 
         return render(request, template_name, {'form': form})
 

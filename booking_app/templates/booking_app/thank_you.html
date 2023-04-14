@@ -2,12 +2,14 @@
 
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row">
-        <div id="outer-box">
-            <h2>Thank you for booking an appointment with us!</h2>
-            <h3>We will be in touch on the number provided to confirm the time and date that best fits your request.</h3>
-            <h4>To view, change or cancel your booking please <a href="{% url 'appt_list' %}">click here</a></h4>
+<div class="container">
+    <div class="row h-100">
+        <div class="col col-lg-6 col-md-8 col-sm-12 m-auto text-center p-3">
+            <div class="card border-0">
+                <h2>Thank you for booking an appointment with us!</h2>
+                <h3>We will be in touch on the number provided to confirm the time and date that best fits your request.</h3>
+                <h4>To view, change or cancel your booking please <a href="{% url 'appt_list' %}">click here</a></h4>
+            </div>
         </div>
     </div>
     {% if is_paginated %}

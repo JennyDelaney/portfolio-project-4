@@ -10,26 +10,22 @@ TIME_CHOICE = (
     ('PM', 'PM'),
 )
 
-# TIME_CONFIRMED = (
-#     ('09:00', '09:00'),
-#     ('10:00', '10:00'),
-#     ('11:00', '11:00'),
-#     ('12:00', '12:00'),
-#     ('14:00', '14:00'),
-#     ('15:00', '15:00'),
-#     ('16:00', '16:00'),
-#     ('17:00', '17:00'),
-# # )
-
 
 class Booking(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="appt_list")
+    user = models.ForeignKey(User,
+                             on_delete=models.CASCADE,
+                             related_name="appt_list")
     name = models.CharField(max_length=60, null=True, blank=True)
     email_address = models.EmailField(null=True, blank=True)
-    phone = models.CharField(max_length=20, null=False, blank=False, default='')
+    phone = models.CharField(max_length=20,
+                             null=False,
+                             blank=False,
+                             default='')
     created_on = models.DateTimeField(auto_now_add=True)
     date_requested = models.DateField()
-    time_requested = models.CharField(max_length=50, choices=TIME_CHOICE, blank=False)
+    time_requested = models.CharField(max_length=50,
+                                      choices=TIME_CHOICE,
+                                      blank=False)
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:

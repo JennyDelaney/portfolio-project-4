@@ -1,108 +1,154 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# FIX-It Physio Website
 
-Welcome Jenny Delaney,
+[View the live project here.](https://pp4-fix-it-physio.herokuapp.com/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+This website was created as an appoinment database for a new physio who is setting up his own practice.  The physio does not have the finance to hire a secretary so it is a system for his patients to be able to book a date and time that would suit them to come and visit.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![home_page](/static/readme_images/home_page.jpg)
 
-## Gitpod Reminders
+## Table of content: 
+ 1. [Site Goals](#Site-Goals)
+ 1. [UX](#UX)
+      1. [User Stories](#User-Stories)
+      1. [Project Progression](#Project-Progression)
+            * [Progression 1](#progression-1)
+            * [Progression 2](#progression-2)
+            * [Progression 3](#progression-3)
+            * [Progression 4](#progression-4)
+            * [Progression 5](#progression-5)
+      1. [New User](#New-user)
+      1. [Returning User](#Returning-user)
+      1. [Design](#Design)
+ 1. [Structure of Website](#Structure)
+ 1. [Technologies Used](#Technologies-Used)
+ 1. [Testing](#Testing)
+ 1. [Deployment](#Deployment)
+ 1. [Credits & Acknowledgements](#Credits)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+***
 
-A blue button should appear to click: _Make Public_,
+## Site Goals:
 
-Another blue button should appear to click: _Open Browser_.
+The goals for this site are as follows:
+* Allow users to make a appointment for the physio
+* Allow users to edit or cancel their appointment
+* Allow the physio to access the list of appointments in the database to ensure that all appointments have been confirmed.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## User Experience (UX)
 
-A blue button should appear to click: _Make Public_,
+-   ### User stories
 
-Another blue button should appear to click: _Open Browser_.
+To demonstrate the Agile approach that was used for this project, GitHub issues were created and a Kanban board was used to record all the user stories. The user stories were categorised using different labels, i.e Must have, Should Have and Could have. Each story was then moved from 'To Do' to 'In Progress' to 'Done' as the project progressed, with Could have stories moved to a future version category.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+-   ### Project Progression:
 
-To log into the Heroku toolbelt CLI:
+<details>
+<summary>Progression One</summary>
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+![Progression One](/static/readme_images/progression_one.jpg)
+</details>
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+<details>
+<summary>Progression Two</summary>
 
-------
+![Progression Two](/static/readme_images/progression_two.jpg)
+</details>
 
-## Release History
+<details>
+<summary>Progression Three</summary>
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+![Progression Three](/static/readme_images/progression_three.jpg)
+</details>
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+<details>
+<summary>Progression Four</summary>
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![Progression Four](/static/readme_images/progression_four.jpg)
+</details>
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+<details>
+<summary>Progression Five</summary>
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![Progression Five](/static/readme_images/progression_five.jpg)
+</details>
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+***
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+####  New User:
+* As a new user, I want to register so I can make an appointment
+* As a new user, I want to make an appointment
+* As a new user, I want to pick the date and time of my appointment
+* As a new user, I want to be able to view my appointment
+* As a new user, I want to be able to log in to edit or cancel my appointment
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+#### Returning User:
+* As a returning user, I want to log in to my account
+* As a returning user, I want to make an appointment
+* As a returning user, I want to view my appointment(s)
+* As a returning user, I want to be able to edit or cancel my appointment(s)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+-   ### Design
+    -   #### Colour Scheme
+        -   The two main colours used are pastel blue and yellow.
+    -   #### Typography
+        -   The Lato font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font is not being imported into the site correctly.
+    -   #### Imagery
+        -   The image used in this project was taken from [Pexel](https://www.pexels.com/).
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+*   ### Structure of website
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+    -   Home Page - [View](/static/readme_images/home_page.jpg)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+    -   Register Page - [View](/static/readme_images/register_page.jpg)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+    -   Log In Page - [View](/static/readme_images/sign_in_page.jpg)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+    -   Home Page when signed in - [View](/static/readme_images/home_after_sign_in.jpg)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+    -   Book an appointment Page - [View](/static/readme_images/book_appointment_page.jpg)
 
-------
+    -   View appointment Page - [View](/static/readme_images/view_appointment_page.jpg)
 
-## FAQ about the uptime script
+## Technologies Used
 
-**Why have you added this script?**
+### Languages Used
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-**How will this affect me?**
+### Frameworks, Libraries, Programs & Applications Used:
+* [Django](https://www.djangoproject.com/)
+* [PostgreSQL](https://www.elephantsql.com/)
+* [Bootstrap](https://getbootstrap.com/)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+#### Google Font
+* Google Font was used to import the chosen font for this project.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+#### GitPod
+* GitPod was used for writing all the code for this project. It was also used to commit and push to GitHub.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+#### GitHub
+* GitHub was used to store this project.
 
-**So….?**
+#### Heroku
+* Heroku was used to deploy the project.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+#### Cloudinary
+* Cloudinary was used to store the image used in this project
 
-**Can I opt out?**
+#### Google Development Tools
+* Google Dev Tools was used to edit code and check responsiveness before making the changes permanent.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## Testing:
+Testing information can be viewed [here](/documents/TESTING.md)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## Deployment
+Deployment information can be viewed [here](/documents/DEPLOYMENT.md)
 
-**Anything more?**
+## Credits & Acknowledgements
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+All code was created and manipulated by myself after searching answers in google. Websites I used more than once were - Geeks for Geeks, W3Schools and Stack Overflow, as well as Code Institute Course PP4 content.
 
----
-
-Happy coding!
+I had no mentor for this project. I would like to thank my family who tested the website for me.

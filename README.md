@@ -98,17 +98,41 @@ To demonstrate the Agile approach that was used for this project, GitHub issues 
 
 *   ### Structure of website
 
-    -   Home Page - [View](/static/readme_images/home_page.jpg)
+    <details>
+    <summary>Home Page</summary>
 
-    -   Register Page - [View](/static/readme_images/register_page.jpg)
+    ![Home Page](/static/readme_images/home_page.jpg)
+    </details>
+    
+    <details>
+    <summary>Register Page</summary>
 
-    -   Log In Page - [View](/static/readme_images/sign_in_page.jpg)
+    ![Register Page](/static/readme_images/register_page.jpg)
+    </details>
+    
+    <details>
+    <summary>Log In Page</summary>
 
-    -   Home Page when signed in - [View](/static/readme_images/home_after_sign_in.jpg)
+    ![Home Page](/static/readme_images/sign_in_page.jpg)
+    </details>
+    
+    <details>
+    <summary>Home Page when signed in</summary>
 
-    -   Book an appointment Page - [View](/static/readme_images/book_appointment_page.jpg)
+    ![Home Page](/static/readme_images/home_after_sign_in.jpg)
+    </details>
 
-    -   View appointment Page - [View](/static/readme_images/view_appointment_page.jpg)
+    <details>
+    <summary>Book and Appointment Page</summary>
+
+    ![Home Page](/static/readme_images/book_appointment_page.jpg)
+    </details>
+
+    <details>
+    <summary>View Appointment Page</summary>
+
+    ![Home Page](/static/readme_images/view_appointment_page.jpg)
+    </details>
 
 ## Technologies Used
 
